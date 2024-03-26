@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/ui/add_lecture.dart';
 import 'package:myapp/ui/notifications_screen.dart';
 import 'package:myapp/ui/students_screen.dart';
 import 'package:myapp/ui/teachers_screen.dart';
@@ -22,6 +23,9 @@ class _DashboardState extends State<Dashboard> {
     Text(
       'Settings',
     ),
+    Text(
+      'TimeTable',
+    ),
   ];
   Widget route(int index) {
     switch (index) {
@@ -31,6 +35,8 @@ class _DashboardState extends State<Dashboard> {
         return NotificationsScreen();
       case 2:
         return const Text('Settings');
+      case 3:
+        return AddLectureScreen();
       default:
         return const Text('Dashboard');
     }
@@ -66,6 +72,10 @@ class _DashboardState extends State<Dashboard> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings),
                 label: 'Settings',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.add),
+                label: 'TimeTable',
               ),
             ],
             currentIndex: value.getSelectedIndex,
